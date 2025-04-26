@@ -1,10 +1,11 @@
 import React from "react";
 import { useAppContext } from "../../context/AppContext";
+import { useState, useEffect } from "react";
 
 const SellerLogin = () => {
-  const [isSeller, setIsSeller, navigate] = useAppContext();
+  const {isSeller, setIsSeller, navigate} = useAppContext();
   const [email, setEmail] = useState("");
-  const [password, setpassword] = usestate("");
+  const [Password, setpassword] = useState("");
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
