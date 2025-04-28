@@ -1,19 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { assets } from "../assets/greencart_assets/assets.js";
 import { useAppContext } from "../context/AppContext.jsx";
 
 const Navbar = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const {
     user,
     setUser,
     setShowUserLogin,
     navigate,
-    searchQuery ,
+    searchQuery,
     setSearchQuery,
     getCartCount,
-    getrCartAmount
+    getCartAmount,
   } = useAppContext();
 
   const logOut = async () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
 
   useEffect(() => {
     if (searchQuery.length > 0) {
-      // Filter products based on search query
+     
       navigate("/products");
     }
   }, [searchQuery]);

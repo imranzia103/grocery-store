@@ -33,7 +33,7 @@ const ProductCard = ({ products }) => {
           </p>
           <div className="flex items-center gap-0.5">
             {Array(5)
-              .fill("")
+              .fill("") 
               .map((_, i) => (
                 <img
                   key={i}

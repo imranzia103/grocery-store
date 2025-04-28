@@ -24,9 +24,9 @@ const getCart = () => {
 
 
 
-        const product = products.find((item) => cartItems._id === key)
-        product.quantity = cartItems[key]
-        tempArray.push(product)
+        const products = products.find((items) => cartItems._id === key)
+        products.quantity = cartItems[key]
+        tempArray.push(products)
     }
 
 

@@ -8,13 +8,13 @@ const AllProducts = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    if (searchQuery.length > 0) {
+    if (searchQuery.length > 0 ) {
       // Filter products based on search query
-      setFilteredProducts(
-        products.filter((products) =>
-          products.name.toLowerCase().includes(searchQuery.toLowerCase())
+      setFilteredProducts(products.filter(
+        products => products.name.toLowerCase().includes(searchQuery.
+          toLowerCase())
         )
-      );
+      )
     } else {
       setFilteredProducts(products);
     }
@@ -30,8 +30,12 @@ const AllProducts = () => {
 
       <div  className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap 3 
       md:gap-6 lg:grid-col-5 mt-6">
-            {filteredProducts.filter((product) => product.inStock).map((product, index) => (
-            <ProductCard key={index} product={product} />
+            
+            {products
+          .filter((products) => products.inStock)
+          
+          .map((products, index) => (
+            <ProductCard key={index} products={products} />
           ))}
       </div>
     </div>

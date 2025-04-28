@@ -4,7 +4,7 @@ import { assets, dummyOrders } from "../../assets/greencart_assets/assets";
 
 const Orders = () => {
   const { currency } = useAppContext();
-  const { orders, setOrders } = useState([]);
+  const [ orders, setOrders ] = useState([]);
 
   const fetchOrders = async () => {
     setOrders(dummyOrders);
@@ -22,7 +22,7 @@ const Orders = () => {
       <div className="md:p-10 p-4 space-y-4">
         <h2 className="text-lg font-medium">Orders List</h2>
         
-        {orders.map((order, index)  => (
+        {orders ?.map((order, index)  => (
           <div
             key={index}
             className="flex flex-col md:items-center md: flex-row gap-5 
@@ -35,7 +35,7 @@ const Orders = () => {
                 alt="boxIcon"
               />
               <div>
-                {orders.items.map((item, index) => (
+                {orders.items ?.map((item, index) => (
                   <div key={index} className="flex flex-col">
                     <p className="font-medium">
                       {item.product.name}{" "}
